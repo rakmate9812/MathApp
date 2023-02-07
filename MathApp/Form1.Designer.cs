@@ -40,6 +40,7 @@
             this.minusRightLabel = new System.Windows.Forms.Label();
             this.minusLabel = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
+            this.startBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.equalsNum1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equalsNum2)).BeginInit();
             this.SuspendLayout();
@@ -114,15 +115,18 @@
             // 
             // equalsNum1
             // 
+            this.equalsNum1.Enabled = false;
             this.equalsNum1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.equalsNum1.Location = new System.Drawing.Point(273, 105);
             this.equalsNum1.Name = "equalsNum1";
             this.equalsNum1.Size = new System.Drawing.Size(56, 34);
             this.equalsNum1.TabIndex = 1;
             this.equalsNum1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.equalsNum1.Click += new System.EventHandler(this.equalsNum1_Click);
             // 
             // equalsNum2
             // 
+            this.equalsNum2.Enabled = false;
             this.equalsNum2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.equalsNum2.Location = new System.Drawing.Point(273, 160);
             this.equalsNum2.Name = "equalsNum2";
@@ -156,12 +160,11 @@
             // 
             // minusLabel
             // 
-            this.minusLabel.AutoSize = true;
             this.minusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.minusLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.minusLabel.Location = new System.Drawing.Point(107, 162);
             this.minusLabel.Name = "minusLabel";
-            this.minusLabel.Size = new System.Drawing.Size(20, 28);
+            this.minusLabel.Size = new System.Drawing.Size(26, 28);
             this.minusLabel.TabIndex = 10;
             this.minusLabel.Text = "-";
             this.minusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,12 +181,26 @@
             this.minusLeftLabel.Text = "?";
             this.minusLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // startBtn
+            // 
+            this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBtn.Location = new System.Drawing.Point(191, 275);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(100, 30);
+            this.startBtn.TabIndex = 13;
+            this.startBtn.Text = "Start";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(478, 349);
+            this.Controls.Add(this.startBtn);
             this.Controls.Add(this.equalsNum2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minusRightLabel);
@@ -222,5 +239,6 @@
         private Label minusRightLabel;
         private Label minusLabel;
         private Label minusLeftLabel;
+        private Button startBtn;
     }
 }

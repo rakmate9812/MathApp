@@ -6,10 +6,5 @@ namespace MathApp
         {
             InitializeComponent();
         }
-
-        private void HimomLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

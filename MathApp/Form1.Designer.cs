@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.minusLabel = new System.Windows.Forms.Label();
             this.minusLeftLabel = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.equalsNum1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equalsNum2)).BeginInit();
             this.SuspendLayout();
@@ -48,11 +50,11 @@
             // timeLabel
             // 
             this.timeLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timeLabel.Location = new System.Drawing.Point(142, 23);
+            this.timeLabel.Location = new System.Drawing.Point(123, 23);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(58, 36);
+            this.timeLabel.Size = new System.Drawing.Size(139, 36);
             this.timeLabel.TabIndex = 0;
-            this.timeLabel.Text = "--";
+            this.timeLabel.Text = "??";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -119,10 +121,11 @@
             this.equalsNum1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.equalsNum1.Location = new System.Drawing.Point(273, 105);
             this.equalsNum1.Name = "equalsNum1";
-            this.equalsNum1.Size = new System.Drawing.Size(56, 34);
+            this.equalsNum1.Size = new System.Drawing.Size(78, 34);
             this.equalsNum1.TabIndex = 1;
             this.equalsNum1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.equalsNum1.Click += new System.EventHandler(this.equalsNum1_Click);
+            this.equalsNum1.Click += new System.EventHandler(this.answer_Enter);
+            this.equalsNum1.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // equalsNum2
             // 
@@ -130,9 +133,11 @@
             this.equalsNum2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.equalsNum2.Location = new System.Drawing.Point(273, 160);
             this.equalsNum2.Name = "equalsNum2";
-            this.equalsNum2.Size = new System.Drawing.Size(56, 34);
-            this.equalsNum2.TabIndex = 2;
+            this.equalsNum2.Size = new System.Drawing.Size(78, 34);
+            this.equalsNum2.TabIndex = 0;
             this.equalsNum2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.equalsNum2.Click += new System.EventHandler(this.answer_Enter);
+            this.equalsNum2.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label1
             // 
@@ -142,7 +147,7 @@
             this.label1.Location = new System.Drawing.Point(221, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 28);
-            this.label1.TabIndex = 12;
+            this.label1.TabIndex = 0;
             this.label1.Text = "=";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -154,7 +159,7 @@
             this.minusRightLabel.Location = new System.Drawing.Point(170, 162);
             this.minusRightLabel.Name = "minusRightLabel";
             this.minusRightLabel.Size = new System.Drawing.Size(21, 28);
-            this.minusRightLabel.TabIndex = 11;
+            this.minusRightLabel.TabIndex = 1;
             this.minusRightLabel.Text = "?";
             this.minusRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -193,6 +198,11 @@
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -240,5 +250,6 @@
         private Label minusLabel;
         private Label minusLeftLabel;
         private Button startBtn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
